@@ -1,0 +1,17 @@
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.card-text {
+    color: #ffffff;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+.author-name {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+}

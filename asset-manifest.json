@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/intro-components-with-signup-from-master/static/css/main.019303e8.chunk.css",
+    "main.js": "/intro-components-with-signup-from-master/static/js/main.78c5c612.chunk.js",
+    "main.js.map": "/intro-components-with-signup-from-master/static/js/main.78c5c612.chunk.js.map",
+    "runtime-main.js": "/intro-components-with-signup-from-master/static/js/runtime-main.4d3051fd.js",
+    "runtime-main.js.map": "/intro-components-with-signup-from-master/static/js/runtime-main.4d3051fd.js.map",
+    "static/js/2.3a3fb51a.chunk.js": "/intro-components-with-signup-from-master/static/js/2.3a3fb51a.chunk.js",
+    "static/js/2.3a3fb51a.chunk.js.map": "/intro-components-with-signup-from-master/static/js/2.3a3fb51a.chunk.js.map",
+    "index.html": "/intro-components-with-signup-from-master/index.html",
+    "static/css/main.019303e8.chunk.css.map": "/intro-components-with-signup-from-master/static/css/main.019303e8.chunk.css.map",
+    "static/js/2.3a3fb51a.chunk.js.LICENSE.txt": "/intro-components-with-signup-from-master/static/js/2.3a3fb51a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/intro-components-with-signup-from-master/static/media/bg-intro-desktop.059183ee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4d3051fd.js",
+    "static/js/2.3a3fb51a.chunk.js",
+    "static/css/main.019303e8.chunk.css",
+    "static/js/main.78c5c612.chunk.js"
+  ]
+}
