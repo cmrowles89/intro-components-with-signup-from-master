@@ -26,7 +26,7 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 ### Links
 
 - Solution URL:(https://github.com/cmrowles89/intro-components-with-signup-from-master)
-- Live Site URL:(https://cmrowles89.github.io/intro-components-with-signup-from-master/)
+- Live Site URL:(https://apprencticechallenge1and2.netlify.app/)
 
 ## My process
 
