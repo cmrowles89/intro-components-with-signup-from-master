@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const PasswordField = ({ setInputValues, password, isPasswordValid }) => {
+const PasswordField = ({
+  setInputValues, password, isPasswordValid, setValidPW,
+}) => {
   const [touched, setTouched] = useState(false);
 
   const handlePassword = (event) => {
     // copies the inputValue for names and adds them to input tag
     setInputValues((prevState) => ({ ...prevState, password: event.target.value }));
     setTouched(true);
+    setValidPW(isPasswordValid);
   };
 
   // eslint-disable-next-line consistent-return
@@ -38,6 +41,7 @@ PasswordField.propTypes = {
   setInputValues: PropTypes.func.isRequired,
   password: PropTypes.string.isRequired,
   isPasswordValid: PropTypes.bool.isRequired,
+  setValidPW: PropTypes.func.isRequired,
 
 };
 

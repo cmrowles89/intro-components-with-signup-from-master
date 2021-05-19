@@ -1,15 +1,16 @@
-/* eslint-disable no-console */
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NameField from './NameField';
 import EmailField from './EmailField';
 import PasswordField from './PasswordField';
 
-const Form = ({ submitted, setSubmitted }) => {
+const Form = ({ setValidated }) => {
   const [validFirstName, setValidFN] = useState(false);
   const [validLastName, setValidLN] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPW] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const [inputValues, setInputValues] = useState({
     firstName: '',
@@ -19,21 +20,28 @@ const Form = ({ submitted, setSubmitted }) => {
 
   });
 
+  const validateForm = () => {
+    if (validFirstName && validLastName && validEmail && validPassword) {
+      setValidated(true);
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitted(true);
+    validateForm();
   };
 
-  const regexString = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+  const emailRegexString = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 
-  const strongRegex = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})');
+  const pwStrongRegex = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})');
 
   return (
     <div>
       <div className="form-page">
         <div className="left-column">
 
-          <h1>Learn to code by watching others</h1>
+          <h1>Understanding code from a dog's perspective</h1>
           <p>
             See how experienced developers solve problems in
             real-time. Watching scripted tutorials is great,
@@ -59,14 +67,14 @@ const Form = ({ submitted, setSubmitted }) => {
                   setValidLN={setValidLN}
                 />
                 <EmailField
-                  isEmailValid={regexString.test(inputValues.email)}
+                  isEmailValid={emailRegexString.test(inputValues.email)}
                   submitted={submitted}
                   email={inputValues.email}
                   setInputValues={setInputValues}
                   setValidEmail={setValidEmail}
                 />
                 <PasswordField
-                  isPasswordValid={strongRegex.test(inputValues.password)}
+                  isPasswordValid={pwStrongRegex.test(inputValues.password)}
                   setInputValues={setInputValues}
                   password={inputValues.password}
                   submitted={submitted}
@@ -75,9 +83,9 @@ const Form = ({ submitted, setSubmitted }) => {
                 <button type="submit" className="submit-btn">CLAIM YOUR FREE TRIAL</button>
               </form>
             </div>
-            { console.log('submitted: ', submitted, 'valid first name', validFirstName, 'valid last name: ', validLastName, 'valid email: ', validEmail, 'valid password: ', validPassword)}
+            { console.log('valid first name', validFirstName, 'valid last name: ', validLastName, 'valid email: ', validEmail, 'valid password: ', validPassword)}
             {(submitted && validFirstName
-      && validLastName) ? <p className="success-message">Submitted</p> : null}
+      && validLastName && validPassword && validEmail) ? <p className="success-message">Submitted</p> : null}
             <span className="terms-of-service">
               By clicking the button you are agreeing to
               <a href="index.html">Terms of Service</a>
@@ -91,8 +99,7 @@ const Form = ({ submitted, setSubmitted }) => {
 };
 
 Form.propTypes = {
-  setSubmitted: PropTypes.func.isRequired,
-  submitted: PropTypes.bool.isRequired,
+  setValidated: PropTypes.func.isRequired,
 };
 
 export default Form;

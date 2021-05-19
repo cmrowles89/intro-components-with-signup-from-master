@@ -3,11 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const EmailField = ({
-  email, submitted, setInputValues, isEmailValid,
+  email, submitted, setInputValues, isEmailValid, setValidEmail,
 }) => {
   const handleEmail = (event) => {
     // copies the inputValue for email and adds them to input tag
     setInputValues((prevState) => ({ ...prevState, email: event.target.value }));
+    setValidEmail(isEmailValid);
   };
 
   // console.log(props.submitted);
@@ -27,6 +28,7 @@ EmailField.propTypes = {
   submitted: PropTypes.bool.isRequired,
   isEmailValid: PropTypes.bool.isRequired,
   setInputValues: PropTypes.func.isRequired,
+  setValidEmail: PropTypes.func.isRequired,
 
 };
 
