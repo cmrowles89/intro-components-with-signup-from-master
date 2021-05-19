@@ -19,7 +19,7 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 ### Screenshot
 
 ![](./Styles/images2/loginscreenshot.png)
-![](./Styles/images/articlepage.png)
+![](./Styles/images2/articlepage.png)
 
 
 
@@ -49,6 +49,7 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 Endpoints:
 
 https://dog.ceo/api/breeds/image/random
+
 https://dog.ceo/api/breeds/list/random
 
 
