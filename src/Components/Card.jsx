@@ -43,9 +43,6 @@ const Card = () => {
           unde ex iusto iste eligendi. Fuga architecto ipsum, iste nesciunt repellat,
           modi dolorem laudantium doloribus sed consectetur repudiandae facere maiores.
         </div>
-        {/* <p className="card-bottom-text">
-          animal
-        </p> */}
       </article>
     </div>
   );

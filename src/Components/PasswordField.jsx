@@ -16,12 +16,6 @@ const PasswordField = ({
 
   // eslint-disable-next-line consistent-return
   const passwordValidator = () => {
-    // check if the pw doesn't exist
-    if (!password) {
-      // show please enter a password
-
-      return <span className="valid-message">Password cannot be empty</span>;
-    }
     // check if pw exist but is not valid
     if (!isPasswordValid) {
       // show please enter a valid password
