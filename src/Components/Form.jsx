@@ -1,16 +1,21 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import NameField from './NameField';
 import EmailField from './EmailField';
 import PasswordField from './PasswordField';
 
-const Form = ({ setValidated }) => {
+const Form = () => {
   const [validFirstName, setValidFN] = useState(false);
   const [validLastName, setValidLN] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPW] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const [validated, setValidated] = useState(false);
 
   const [inputValues, setInputValues] = useState({
     firstName: '',
@@ -20,9 +25,29 @@ const Form = ({ setValidated }) => {
 
   });
 
+  const history = useHistory();
+  console.log(history);
+
+  const setData = () => {
+    const obj = {
+      first: inputValues.firstName,
+      last: inputValues.lastName,
+      email: inputValues.email,
+      password: inputValues.password,
+    };
+    localStorage.setItem('userData', JSON.stringify(obj));
+  };
+
+  const getData = () => {
+    let data = localStorage.getItem('userData');
+    data = JSON.parse(data);
+    console.log(data);
+  };
+
   const validateForm = () => {
     if (validFirstName && validLastName && validEmail && validPassword) {
       setValidated(true);
+      history.push('/grid');
     }
   };
 
@@ -30,6 +55,8 @@ const Form = ({ setValidated }) => {
     event.preventDefault();
     setSubmitted(true);
     validateForm();
+    getData();
+    setData();
   };
 
   const emailRegexString = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
@@ -96,10 +123,6 @@ const Form = ({ setValidated }) => {
       </div>
     </div>
   );
-};
-
-Form.propTypes = {
-  setValidated: PropTypes.func.isRequired,
 };
 
 export default Form;

@@ -1,23 +1,22 @@
 /* eslint-disable import/no-named-as-default-member */
-import React, { useState } from 'react';
+import React from 'react';
+import {
+  BrowserRouter, Route, Switch,
+} from 'react-router-dom';
 import Form from './Components/Form';
 import './Styles/Login.css';
 import Grid from './Components/Grid';
 import './Styles/Grid.css';
 
 function App() {
-  const [validated, setValidated] = useState(false);
-
   return (
-    <div className="App">
-      {console.log(validated)}
-      {(validated) ? <Grid /> : (
-        <Form
-          setValidated={setValidated}
-        />
-      )}
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Form} />
 
-    </div>
+        <Route exact path="/grid" component={Grid} />
+      </Switch>
+    </BrowserRouter>
 
   );
 }
