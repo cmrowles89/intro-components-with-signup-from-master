@@ -18,8 +18,8 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 
 ### Screenshot
 
-![](./Styles/images2/loginscreenshot.png)
-![](./Styles/images2/articlepage.png)
+![](./src/Styles/images2/loginscreenshot.png)
+![](./src/Styles/images2/articlepage.png)
 
 
 
