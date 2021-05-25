@@ -1,6 +1,6 @@
 # Frontend Mentor - Intro to Components with sign-up from Master & Testimonials grid section solution
 
-This is a solution to the [Introduction to Components] (https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1)[Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). These challenges were combined to introduce using conditional rendering to re-direct from the login page after validation to a new "page".
+This is a solution to the [Introduction to Components] (https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1)[Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). These challenges were combined to introduce using react routing to re-direct from the login page after validation to a new page.
 
 ## Table of contents
 
@@ -18,8 +18,8 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 
 ### Screenshot
 
-![](/src/Styles/images2/loginscreenshot.png)
-![](/src/Styles/images2/articlepage.png)
+![](https://raw.githubusercontent.com/cmrowles89/intro-components-with-signup-from-master/master/src/Styles/images2/loginscreenshot.PNG)
+![](https://raw.githubusercontent.com/cmrowles89/intro-components-with-signup-from-master/master/src/Styles/images2/articlepage.PNG)
 
 
 ### Links
