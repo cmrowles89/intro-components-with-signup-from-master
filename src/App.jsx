@@ -12,7 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Form} />
+        <Route exact path="/">
+          <Form />
+        </Route>
 
         <Route exact path="/grid" component={Grid} />
       </Switch>

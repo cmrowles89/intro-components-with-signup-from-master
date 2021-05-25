@@ -38,12 +38,6 @@ const Form = () => {
     localStorage.setItem('userData', JSON.stringify(obj));
   };
 
-  const getData = () => {
-    let data = localStorage.getItem('userData');
-    data = JSON.parse(data);
-    console.log(data);
-  };
-
   const validateForm = () => {
     if (validFirstName && validLastName && validEmail && validPassword) {
       setValidated(true);
@@ -55,7 +49,6 @@ const Form = () => {
     event.preventDefault();
     setSubmitted(true);
     validateForm();
-    getData();
     setData();
   };
 
