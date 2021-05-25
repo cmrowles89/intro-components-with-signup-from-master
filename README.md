@@ -22,7 +22,6 @@ This is a solution to the [Introduction to Components] (https://www.frontendment
 ![](/src/Styles/images2/articlepage.png)
 
 
-
 ### Links
 
 - Solution URL:(https://github.com/cmrowles89/intro-components-with-signup-from-master)
