@@ -2,11 +2,12 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import NameField from './NameField';
 import EmailField from './EmailField';
 import PasswordField from './PasswordField';
+import { SignUpContext } from '../Helper/Context';
 
 const Form = () => {
   const [validFirstName, setValidFN] = useState(false);
@@ -14,8 +15,7 @@ const Form = () => {
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPW] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  const [validated, setValidated] = useState(false);
+  const { validated, setValidated } = useContext(SignUpContext);
 
   const [inputValues, setInputValues] = useState({
     firstName: '',
