@@ -39,6 +39,7 @@ This is a solution to the [Introduction to Components](https://www.frontendmento
 - [ESLint Airbnb](https://elint.org)
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [Netlify](https://www.netlify.com/) - To deploy
 
 ## API
 
