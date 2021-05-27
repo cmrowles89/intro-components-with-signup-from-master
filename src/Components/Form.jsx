@@ -105,7 +105,7 @@ const Form = () => {
             </div>
             { console.log('valid first name', validFirstName, 'valid last name: ', validLastName, 'valid email: ', validEmail, 'valid password: ', validPassword)}
             {(submitted && validFirstName
-      && validLastName && validPassword && validEmail) ? <p className="success-message">Submitted</p> : null}
+      && validLastName && validPassword && validEmail) ? <p className="success-message">Validated</p> : null}
             <span className="terms-of-service">
               By clicking the button you are agreeing to
               <a href="index.html">Terms of Service</a>
